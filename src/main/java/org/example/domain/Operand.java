@@ -12,6 +12,10 @@ public class Operand {
         return new Operand(operand);
     }
 
+    public Integer getOperand() {
+        return operand;
+    }
+
     private void validate(Integer operand) {
         validatePositiveNumber(operand);
     }
