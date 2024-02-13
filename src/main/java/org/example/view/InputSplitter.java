@@ -27,6 +27,6 @@ public class InputSplitter {
     }
 
     private void addDelimiter(String input) {
-        delimiter += scanCustomDelimiter(input);
+        delimiter += "|" + scanCustomDelimiter(input);
     }
 }
