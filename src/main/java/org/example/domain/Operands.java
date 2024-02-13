@@ -13,4 +13,10 @@ public class Operands {
     public static Operands from(List<Operand> operands) {
         return new Operands(operands);
     }
+
+    public Integer calculateSummation() {
+        return operands.stream()
+                .mapToInt(Operand::getOperand)
+                .sum();
+    }
 }
