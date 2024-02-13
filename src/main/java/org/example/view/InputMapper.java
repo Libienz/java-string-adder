@@ -1,12 +1,8 @@
 package org.example.view;
 
+import java.util.List;
 import org.example.domain.Operand;
 import org.example.domain.Operands;
-
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class InputMapper {
 
@@ -18,10 +14,7 @@ public class InputMapper {
 
     public Operands mapToOperands(String input) {
         List<String> operands = inputSplitter.splitToOperands(input);
-        return Operands.from(operands.stream()
-                .map(this::mapToInt)
-                .map(Operand::from)
-                .toList());
+        return Operands.from(operands.stream().map(this::mapToInt).map(Operand::from).toList());
     }
 
     private Integer mapToInt(String operand) {
